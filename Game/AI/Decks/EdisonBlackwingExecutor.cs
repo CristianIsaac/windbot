@@ -168,9 +168,9 @@ namespace WindBot.Game.AI.Decks
         private bool KalutEffect()
         {
             // Preserve Kalut unless its 1400 ATK swing changes the current battle.
-            ClientCard attacker = Duel.Attacker;
-            ClientCard defender = Duel.AttackTarget;
-            if (attacker == null || defender == null || attacker.Controller != 0)
+            ClientCard attacker = Bot.BattlingMonster;
+            ClientCard defender = Enemy.BattlingMonster;
+            if (attacker == null || defender == null)
                 return false;
             if (!attacker.IsCode(Blackwings))
                 return false;
